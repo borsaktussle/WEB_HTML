@@ -1,0 +1,91 @@
+
+KEPO IT ADMIN
+===================================
+HTML
+===================================
+<html>
+<head>
+<meta>
+<link>
+<title>
+<body>
+<div>
+<nav>
+<ul>
+<li>
+<a>
+<form>
+<input>
+<button>
+<i>
+<span>
+<p>
+<h3>
+<footer>
+<strong>
+<aside>
+<script>
+<nav>
+<label>
+<ol>
+<section>
+<img>
+<thead>
+
+
+===================================
+CSS
+===================================
+text-decoration
+border-radius
+
+margin-bottom
+text-align
+caption-side
+vertical-align
+border-style
+  
+font-family
+line-height
+-webkit-text-size-adjust
+-ms-text-size-adjust
+-ms-overflow-style
+-webkit-tap-highlight-color
+  
+  box-sizing
+  height
+  overflow
+  cursor
+  text-decoration
+  line-height
+  position
+  line-height
+  vertical-align
+
+  border-collapse
+  text-transform
+  -webkit-appearance
+  padding
+  box-sizing
+  -webkit-appearance
+  overflow
+  resize
+  max-width
+
+white-space
+outline-offset
+  -webkit-appearance
+
+  content
+  order
+  flex
+ transition
+  overflow-x
+opacity
+z-index
+ white-space
+ vertical-align
+ flex-direction
+  flex-wrap
+  justify-content
+  flex-shrink
