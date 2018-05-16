@@ -48,7 +48,6 @@
                   <th>Status</th>
                   <th>Level</th>
                   <th>Username</th>
-                  <th>Rating</th>
                   <!-- <th>Aksi</th> -->
                 </tr>
                 </thead>
@@ -61,7 +60,6 @@
                   <td>Banned Permanen</td>
                   <td>User</td>
                   <td>DEDEW53</td>
-                  <td>53</td>
                   <!-- <td align="center">
                    <a href="#" class="btn btn-info">
                       <i class="fa fa-eye"></i> 
@@ -85,7 +83,6 @@
                   <td>Aktif </td>
                   <td>User</td>
                   <td>Borsak69</td>
-                  <td>312</td>
                   <!-- <td align="center">
                    <a href="#" class="btn btn-info">
                       <i class="fa fa-eye"></i> 
@@ -107,7 +104,6 @@
                   <td>Banned 3 hari </td>
                   <td>User</td>
                   <td>zezee</td>
-                  <td>185</td>
                   <!-- <td align="center">
                    <a href="#" class="btn btn-info">
                       <i class="fa fa-eye"></i> 
@@ -129,7 +125,6 @@
                   <td>Aktif</td>
                   <td>User</td>
                   <td>Si_ul99</td>
-                  <td>285</td>
                   <!-- <td align="center">
                    <a href="#" class="btn btn-info">
                       <i class="fa fa-eye"></i> 
