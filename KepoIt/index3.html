@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>KepoIT</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="css/custom.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <link rel="icon" type="image/png" href="image/kepo1.png" sizes="16x16"/>
+    <script src="https://code.jquery.com/jquery-3.3.1.js" type="text/javascript"></script>
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+  </head>
+  <body>
+    <div class="container-fluid ">
+      <!-- Header -->
+      <div class="row r1">
+        <div class="col-md-7 logo">
+          <img src="image/kepo1.png" alt="">
+        </div>
+        <div class="col-md-2">
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+              
+                  <div class="input-group">
+                      <input type="text" class="form-control" placeholder="Search" name="q"/>
+                      <div class="input-group-btn">
+                          <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+                      </div>
+                  </div>
+                    
+            </div>
+      </div>
+      <div class="col-md-3">
+        <ul class="nav navbar-nav navbar-right">
+                <li><a href="TentangKami.html">Tentang Kami</a></li>
+                <li><a href="Peraturan.html">Peraturan</a></li>
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Ishaq Fakhrozi <b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="BerandaProfil.html">Profil</a></li>
+                    <li><a href="#">Another action</a></li>
+                      <li><a href="#">Sign Out</a></li>
+                  </ul>
+                </li>
+              </ul>
+      </div>
+    </div>
+  </div>
+    <!-- header -->
+    <div class="container-fluid">
+       <div class="row r3">
+      <div class="col-md-2  left-sidebar">
+     <button onclick="document.getElementById('id01').style.display='block'" class="tombol"><i class="fa fa-question"></i> Question</button>
+     <div id="id01" class="modal az">
+     <form class="modal-content animate" >
+              <div class="imgcontainer">
+                <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+              </div>
+               <div class="container" style="width: 100%">
+               <label for=""><b>Title</b></label>
+                <input type="text" placeholder="Title" name="uname" required/>
+                <label for="psw"><b>Tags</b></label>
+                <input type="password" placeholder="ex: Java,PHP,javascript" name="psw" required/>
+                <label>Masukan Pertanyaan</label>
+                <textarea name="txtarea1" rows="10" cols="147" placeholder="Masukkan Pertanyaan Kamu"></textarea>
+                  
+                <button type="submit" >Terbitkan</button>
+              </div>
+              <div class="container" style="background-color:#f1f1f1; width: 100%">
+                <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+              </div>
+      </form>
+    </div>
+        <hr/>
+          <li class="widget widget-menu">
+             <div class="container">
+                <h3>Menu</h3>
+                <div class="row">
+                  <div class="col-md-3">
+                    <ul class="nav nav-pills nav-stacked">
+                      <li><a href="index.html"><i class="fa fa-home"></i>  Beranda</a></li>
+                    <li ><a href="Peraturan.html"><i class="fa fa-balance-scale"></i> Aturan</a></li>
+                    <li ><a href="Question.html"><i class="fa fa-question"></i>   Question</a></li>
+                    <li ><a href="Postingan.html"><i class="fa fa-server"></i>   Sharing</a></li>
+                    <li ><a href="Rating.html"><i class="fa fa-trophy"></i>   Rating</a></li>
+                    <li ><a href="Tags.html"><i class="fa fa-hashtag"></i>   Tags</a></li>
+                    </ul>
+                  </div>
+                </div> 
+              </div>          
+        </li><!-- END LEFT MENU -->
+         
+        
+        <hr/>
+        
+            <!-- SOCIAL LINKs -->
+      <div class="social-links">
+        <h3>Social</h3>
+          <ul>
+                 <li>
+                  <a  href="https://www.facebook.com/"  class="social fb">
+                      <i class="fa fa-facebook-official fa-2x" aria-hidden="true"></i>
+                  </a>
+              </li>
+                            <li>
+                  <a rel="nofollow" href="https://twitter.com/" target="_blank" class="social tw">
+                      <i class="fa fa-twitter-square fa-2x"></i>
+                  </a>
+              </li>
+                            <li>
+                  <a rel="nofollow" href="https://mail.google.com/" target="_blank" class="social gg">
+                      <i class="fa fa-google-plus-square fa-2x"></i>
+                  </a>
+              </li>
+              <li>
+                  <a href="https://www.linkedin.com/uas/login" target="_blank" class="social lk">
+                      <i class="fa fa-linkedin-square fa-2x"></i>
+                  </a>
+              </li>
+           </ul>
+      </div>
+      <hr>
+      <div class="copyright copy">
+        <p>Copyright &copy; KepoIT.com</p>
+      </div>
+      <!-- END / SOCIAL LINKs -->   
+      </div>
+       <div class="col-md-8 tengah ">
+          <div class="container">
+            <div class="col-md-6">
+              <h1>Main Forum</h1>
+            </div>
+          </div>
+          <div class="container">
+    
+          <div class="row">
+            <div class="col-md-7 r4">
+              <ul>
+                <li><h3 class="h33">Java class</h3>
+              <p class="p1">lorem ipsum Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p></li>
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="row">
+                      <div class="col-md-3">
+                         <a href="BerandaProfil.html" title=""><p><i class="fa fa-user"> Ojik</i></p></a>
+                      </div>
+                      <div class="col-md-3">
+                         <p><i class="fa fa-hashtag"> Java</i></p>
+                      </div>
+                      <div  class="col-md-3">
+                         <p> <i class="fa fa-clock-o"></i> Publish 19.30</p> 
+                      </div>
+                       <div  class="col-md-3">
+                         <p> <i class="fa fa-server"></i> Sharing</p> 
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <a href="SharingAnswer.html" title=""><i class="fa fa-reply"> Jawab</i></a>
+                  </div>
+                </div>
+                
+              </div>
+              
+              
+            </div>
+            <div class="col-md-5 r5" >
+              <div class="col-md-6" style="border:1px solid #000;width:100px;height:100px;border-radius:100px;background:#ddd; text-align: center">
+                <h4>Answer</h4>
+                <p>20</p>
+              </div>
+                <div class="col-md-6" style="border:1px solid #000;width:100px;height:100px;border-radius:100px;background:#ddd; text-align: center; margin-left: 10px">
+                <h4>Dilihat</h4>
+                <p>20</p>
+              </div>
+            </div>
+          </div>
+             <div class="row r4">
+            <div class="col-md-7 ">
+              <ul>
+                <li><h3 class="h33">PHP</h3>
+              <p class="p1">lorem ipsum Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p></li>
+
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="row">
+                      <div class="col-md-3">
+                         <p><i class="fa fa-user"> Ojik</i></p>
+                      </div>
+                        <div class="col-md-3">
+                         <p><i class="fa fa-hashtag"> PHP</i></p>
+                      </div>
+                      <div  class="col-md-3">
+                         <p> <i class="fa fa-clock-o"></i> Publish 19.30</p> 
+                      </div>
+                      <div  class="col-md-3">
+                         <p> <i class="fa fa-question"></i> Question</p> 
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                      <a href="Answer.html" title=""><i class="fa fa-reply"> Jawab</i></a>
+                  </div>
+                </div>
+                
+              </div> 
+            </div>
+            <div class="col-md-5 r5" >
+              <div class="col-md-6" style="border:1px solid #000;width:100px;height:100px;border-radius:100px;background:#ddd; text-align: center">
+                <h4>Answer</h4>
+                <p>20</p>
+              </div>
+                <div class="col-md-6" style="border:1px solid #000;width:100px;height:100px;border-radius:100px;background:#ddd; text-align: center; margin-left: 10px">
+                <h4>Dilihat</h4>
+                <p>20</p>
+              </div>
+                
+                
+            </div>
+          </div>
+
+           <div class="row r4">
+            <div class="col-md-7 ">
+              <ul>
+                <li><h3 class="h33">Html dan Css</h3>
+              <p class="p1">lorem ipsum Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p></li>
+
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="row">
+                      <div class="col-md-3">
+                         <p><i class="fa fa-user"> Ojik</i></p>
+                      </div>
+                        <div class="col-md-3">
+                         <p><i class="fa fa-hashtag"> HTML, CSS</i></p>
+                      </div>
+                      <div  class="col-md-3">
+                         <p> <i class="fa fa-clock-o"></i> Publish 19.30</p> 
+                      </div>
+                      <div  class="col-md-3">
+                         <p> <i class="fa fa-question"></i> Question</p> 
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                      <a href="Answer.html" title=""><i class="fa fa-reply"> Jawab</i></a>
+                  </div>
+                </div>
+                
+              </div> 
+            </div>
+            <div class="col-md-5 r5" >
+              <div class="col-md-6" style="border:1px solid #000;width:100px;height:100px;border-radius:100px;background:#ddd; text-align: center">
+                <h4>Answer</h4>
+                <p>20</p>
+              </div>
+                <div class="col-md-6" style="border:1px solid #000;width:100px;height:100px;border-radius:100px;background:#ddd; text-align: center; margin-left: 10px">
+                <h4>Dilihat</h4>
+                <p>20</p>
+              </div>
+                
+               
+            </div>
+          </div>
+
+               <div class="row r4">
+            <div class="col-md-7 ">
+              <ul>
+                <li><h3 class="h33">JavaScript</h3>
+              <p class="p1">lorem ipsum Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p></li>
+
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="row">
+                      <div class="col-md-3">
+                         <p><i class="fa fa-user"> Ojik</i></p>
+                      </div>
+                        <div class="col-md-3">
+                         <p><i class="fa fa-hashtag"> JavaScript</i></p>
+                      </div>
+                      <div  class="col-md-3">
+                         <p> <i class="fa fa-clock-o"></i> Publish 19.30</p> 
+                      </div>
+                      <div  class="col-md-3">
+                         <p> <i class="fa fa-question"></i> Question</p> 
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <a href="Answer.html" title=""><i class="fa fa-reply"> Jawab</i></a>
+                  </div>
+                </div>
+                
+              </div> 
+            </div>
+            <div class="col-md-5 r5" >
+              <div class="col-md-6" style="border:1px solid #000;width:100px;height:100px;border-radius:100px;background:#ddd; text-align: center">
+                <h4>Answer</h4>
+                <p>20</p>
+              </div>
+                <div class="col-md-6" style="border:1px solid #000;width:100px;height:100px;border-radius:100px;background:#ddd; text-align: center; margin-left: 10px">
+                <h4>Dilihat</h4>
+                <p>20</p>
+              </div>
+                
+                
+            </div>
+          </div>
+          </div>
+      </div>
+       <div class="col-md-2 right-sidebar">
+        <div class="container tes1">
+             <ul>
+            <h3>User</h3> 
+            <li>
+              <p>3000</p>
+              
+            </li>
+            <hr>
+            <h3>Total Pertanyaan</h3>
+            <li>
+             <p>2740</p> 
+            </li>
+          </ul>
+          <hr/>
+          <img src="http://placehold.it/250x300" alt="" class="img-rounded img-responsive" />
+          <p>Pasang Iklan Hubungin Kami di KepoIT.com</p>
+        </div>
+       
+       
+      </div>
+  </div>
+</div>
+  </div>
+    </div>
+    
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+  <script type="text/javascript">
+    // Get the modal
+var modal = document.getElementById('id01');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+  </script>
+</html>

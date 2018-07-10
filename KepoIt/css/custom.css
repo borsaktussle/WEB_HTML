@@ -1,0 +1,329 @@
+/* Halaman Login dan Register */
+.r1 {
+	background-color: #24a8f4;
+    margin-bottom: 0px;
+	
+}
+.r2 {
+	background-color: #fcfbf9;
+	padding: 120px
+}
+
+.btn-fb{
+    color: #fff;
+    background-color:#3b5998;
+}
+.btn-fb:hover{
+    color: #fff;
+    background-color:#496ebc 
+}
+.btn-tw{
+    color: #fff;
+    background-color:#55acee;
+}
+.btn-tw:hover{
+    color: #fff;
+    background-color:#59b5fa;
+}
+.login{
+	margin-right: 10px;
+}
+
+#login-dp{
+    min-width: 250px;
+    padding: 14px 14px 0;
+    overflow:hidden;
+    background-color:rgba(255,255,255,.8);
+}
+#login-dp .help-block{
+    font-size:12px    
+}
+#login-dp .bottom{
+    background-color:rgba(255,255,255,.8);
+    border-top:1px solid #ddd;
+    clear:both;
+    padding:14px;
+}
+#login-dp .social-buttons{
+    margin:12px 0    
+}
+#login-dp .social-buttons a{
+    width: 49%;
+}
+#login-dp .form-group {
+    margin-bottom: 10px;
+}
+.btn-fb{
+    color: #fff;
+    background-color:#3b5998;
+}
+.btn-fb:hover{
+    color: #fff;
+    background-color:#496ebc 
+}
+.btn-tw{
+    color: #fff;
+    background-color:#55acee;
+}
+.btn-tw:hover{
+    color: #fff;
+    background-color:#59b5fa;
+}
+@media(max-width:768px){
+    #login-dp{
+        background-color: inherit;
+        color: #fff;
+    }
+    #login-dp .bottom{
+        background-color: inherit;
+        border-top:0 none;
+    }
+}
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+/* Set a style for all buttons */
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 20px;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+    width: auto;
+    padding: 10px 18px;
+    background-color: #f44336;
+}
+
+/* Center the image and position the close button */
+.imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+    position: relative;
+}
+
+
+
+.container {
+    padding: 16px;
+}
+
+span.psw {
+    float: right;
+    padding-top: 16px;
+}
+
+/* The Modal (background) */
+.az {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4); 
+    padding-top: 60px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto 15% auto; 
+    width: 100%; 
+}
+
+/* The Close Button (x) */
+.close {
+    position: absolute;
+    right: 25px;
+    top: 0;
+    color: #000;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: red;
+    cursor: pointer;
+}
+
+/* Add Zoom Animation */
+.animate {
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+    from {-webkit-transform: scale(0)} 
+    to {-webkit-transform: scale(1)}
+}
+    
+@keyframes animatezoom {
+    from {transform: scale(0)} 
+    to {transform: scale(1)}
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+    span.psw {
+       display: block;
+       float: none;
+    }
+    .cancelbtn {
+       width: 100%;
+    }
+}
+/* akhir halaman register dan login */
+
+.r3 {
+	background-color: #fcfbf9;
+	
+}
+a{
+	color: black;
+}
+.navbar-centerbar > {
+	color: black;
+}
+li {
+	list-style-type: none;
+	display: inline;
+
+}
+button[type=question]{
+	-webkit-box-shadow: 0 3px 5px #666;
+	border-radius: 5px;
+}
+.lingkaran {
+    width:100px;
+    height:100px;
+    background-color:#f00;
+    border-radius:50%;
+    overflow:hidden;
+}
+.right-sidebar ul li p{
+    font-size: 30px
+}
+.right-sidebar{
+    
+   
+    background: url("../image/divider.png") repeat-y left ;  
+}
+.left-sidebar{
+    float: left;
+    overflow: hidden;
+    
+}
+
+hr{
+    border-bottom: solid;
+}
+.tengah{
+    overflow: hidden;
+}
+.r4{
+    
+    border-top: solid;
+   /*  border-bottom: solid; */
+}
+.h33{
+  border-bottom: outset;  
+}
+.r5{
+    margin-top: 50px;
+}
+.b1{
+    margin-top: 20px;
+}
+.imgregis{
+    width: 95%;
+}
+.tombol{
+    border-radius: 100px;
+    
+}
+.logo>img{
+    width: 30%;
+}
+
+.gly {  margin-bottom: 10px;margin-right: 10px;}
+
+.small {
+display: block;
+line-height: 1.428571429;
+color: #999;
+}
+
+body{
+   font-family: "Times New Roman", Times, serif;
+}
+/* komen */
+.thumbnail {
+    padding:0px;
+}
+.panel {
+    position:relative;
+}
+.panel>.panel-heading:after,.panel>.panel-heading:before{
+    position:absolute;
+    top:11px;left:-16px;
+    right:100%;
+    width:0;
+    height:0;
+    display:block;
+    content:" ";
+    border-color:transparent;
+    border-style:solid solid outset;
+    pointer-events:none;
+}
+.panel>.panel-heading:after{
+    border-width:7px;
+    border-right-color:#f7f7f7;
+    margin-top:1px;
+    margin-left:2px;
+}
+.panel>.panel-heading:before{
+    border-right-color:#ddd;
+    border-width:8px;
+}
+/* komen */
+.copy{
+    margin-bottom: 30px;
+}
+.r5 ul li span{
+    width: 57px;
+    height: 46px;
+    display: block;
+    text-align: center;
+    line-height: 3.3;
+    margin-bottom: 15px;
+    border: 1.8px solid #3498db;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+}
+header .row .navbar{
+    margin-bottom: 0;
+}

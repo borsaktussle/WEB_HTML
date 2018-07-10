@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <title>KepoIT</title>
+
+    <!-- CSS-->
+    <link href="css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="css/custom.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <script src="https://code.jquery.com/jquery-3.3.1.js" type="text/javascript"></script>
+     <link rel="icon" type="image/png" href="image/kepo1.png" sizes="16x16" />
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+   
+  </head>
+  <body>
+    <div class="container-fluid">
+        <header >
+            <div class="row ">
+              <nav class="navbar r1">
+                <div class="container-fluid">
+                  <div class="navbar-header logo">
+                    <img src="image/kepo1.png" alt="">
+                  </div>
+                
+               
+                 <ul class="nav navbar-nav navbar-right">
+        <li><p class="navbar-text">Already have an account?</p></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>Login</b> <span class="caret"></span></a>
+      <ul id="login-dp" class="dropdown-menu">
+        <li>
+           <div class="row">
+              <div class="col-md-12">
+                Login via
+                <div class="social-buttons">
+                  <a href="#" class="btn btn-fb"><i class="fa fa-facebook"></i> Facebook</a>
+                  <a href="#" class="btn btn-tw"><i class="fa fa-google-plus"></i> Gmail</a>
+                </div>
+                                or
+                 <form class="form" role="form" method="post" action="login" accept-charset="UTF-8" id="login-nav">
+                    <div class="form-group">
+                       <label class="sr-only" for="exampleInputEmail2">Email address</label>
+                       <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Email address" required/>
+                    </div>
+                    <div class="form-group">
+                       <label class="sr-only" for="exampleInputPassword2">Password</label>
+                       <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password" required/>
+                                             <div class="help-block text-right"><a href="">Forget the password ?</a></div>
+                    </div>
+                    <div class="form-group">
+                       <button type="submit" class="btn btn-primary btn-block">Sign in</button>
+                    </div>
+                    <div class="checkbox">
+                       <label>
+                       <input type="checkbox"> keep me logged-in
+                       </label>
+                    </div>
+                 </form>
+              </div>
+              
+           </div>
+        </li>
+      </ul>
+                </div>
+              </nav>
+             
+            </div>
+
+        </header><!-- /header -->
+		   <div class="row r2">
+    		<div class="col-md-8">
+    			<img class="imgregis" src="image/register.png" alt=""/>
+    		</div>
+    		<div class="col-md-4 kanan">
+    			<form>
+		          	<h3>Form Register</h3>
+				     <div class="form-group">
+
+					<label ><code id="err_fullname"><span id="err_span_fullname"></span></code>
+					</label>
+					<input type="text" name="fullname" id="fullname" placeholder="Fullname" class="form-control/">
+					<label ><code id="err_username"><span id="err_span_username"></span></code>
+					</label>
+					<input type="text" name="username" id="username" placeholder="Username" class="form-control"/>
+
+					<label ><code id="err_pass"><span id="err_span_pass"></span></code>
+					</label>
+					<input type="password" name="password" id="pass" placeholder="Password" class="form-control"/>
+
+					<label ><code id="err_re_pass"><span id="err_span_re_pass"></span></code>
+					</label>
+					<input type="password" name="re_password" id="re_pass" placeholder="Re-Type Password" class="form-control"/>
+
+					<label >
+					</label>
+					<input type="elsemail" name="email" id="email" placeholder="Email" class="form-control" required/>
+
+					<label ><code id="err_nohp"><span id="err_nohp"></span></code>
+					</label>
+					<input type="handphone" name="handphone" id="nohp" placeholder="no.Handphone" class="form-control"/>
+						
+						
+						
+					</div>
+					<button type="submit" class="btn btn-primary" id="submit">Register</button>	
+		        </form>
+    		</div>
+    	</div>
+ 
+    </div>
+   
+    	
+    	
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+   <script type="text/javascript">
+		$(document).ready(function(e){
+			$("#err_fullname").hide();
+			$("#err_username").hide();
+			$("#err_pass").hide();
+			$("#err_re_pass").hide();
+
+
+			$("#submit").click(function(e){
+
+				if ($("#fullname").val()=="") {
+					$("#err_fullname").show();
+					$("#err_span_fullname").text("Wajib Diisi!!");
+				}else{
+					$("#err_fullname").hide();
+				}
+
+				if ($("#username").val()=="") {
+					$("#err_username").show();
+					$("#err_span_username").text("Wajib Diisi!!");
+				}else if($("#username").val().length < 5){
+					$("#err_username").show();
+					$("#err_span_username").text("Min. 5 Karakter");
+				}
+				else if($("#username").val().length > 12){
+					$("#err_username").show();
+					$("#err_span_username").text("Min. 12 Karakter");
+				}else{
+					$("#err_username").hide();
+				}
+
+				if ($("#pass").val()=="") {
+					$("#err_pass").show();
+					$("#err_span_pass").text("Wajib Diisi!!");
+				}else if($("#pass").val().length < 5){
+					$("#err_pass").show();
+					$("#err_span_pass").text("Min. 5 Karakter");
+				}
+				else if($("#pass").val().length > 12){
+					$("#err_pass").show();
+					$("#err_span_pass").text("Min. 12 Karakter");
+				}else{
+					$("#err_pass").hide();
+				}
+
+				if ($("#re_pass").val()=="") {
+					$("#err_re_pass").show();
+					$("#err_span_re_pass").text(" Wajib Diisi!!");
+				}else if($("#re_pass").val()== $("#pass").val()){
+					$("#err_re_pass").hide();
+					
+				}else{
+					$("#err_re_pass").show();
+					$("#err_span_re_pass").text("tidak cocok dengan password");
+				}
+
+
+				return false;
+			});
+		});
+		
+	$(document).ready(function(e){
+		$('#submit').click(function(){
+			
+					alert('Register Berhasil');
+				})
+			});
+		</script>
+	</script>
+
+ 
+</html>
