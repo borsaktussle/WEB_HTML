@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="fefb9dd12755498996bd6d4b7ee17f16" Name="Diagram1">
+        <EntityTypeShape EntityType="KepoITModel.ANSWER" Width="1.5" PointX="7.5" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="KepoITModel.KATEGORY_REPORT" Width="1.5" PointX="9.75" PointY="10.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="KepoITModel.KOMENTAR" Width="1.5" PointX="9.75" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="KepoITModel.LEVEL_USER" Width="1.5" PointX="0.75" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="KepoITModel.QUESTION" Width="1.5" PointX="5.25" PointY="9.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="KepoITModel.REPORT" Width="1.5" PointX="12" PointY="6.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="KepoITModel.STATUS" Width="1.5" PointX="0.75" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="KepoITModel.sysdiagrams" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="KepoITModel.TAGS" Width="1.5" PointX="3" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="KepoITModel.TAGS_QUESTION" Width="1.5" PointX="7.5" PointY="12" IsExpanded="true" />
+        <EntityTypeShape EntityType="KepoITModel.TAGS_SHARING" Width="1.5" PointX="7.5" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="KepoITModel.USER" Width="1.5" PointX="3" PointY="5.125" IsExpanded="true" />
+        <AssociationConnector Association="KepoITModel.FK_ANSWER_RELATIONS_QUESTION" ManuallyRouted="false" />
+        <AssociationConnector Association="KepoITModel.FK_ANSWER_RELATIONS_USER" ManuallyRouted="false" />
+        <AssociationConnector Association="KepoITModel.FK_KOMENTAR_RELATIONS_ANSWER" ManuallyRouted="false" />
+        <AssociationConnector Association="KepoITModel.FK_REPORT_RELATIONS_ANSWER" ManuallyRouted="false" />
+        <AssociationConnector Association="KepoITModel.FK_REPORT_RELATIONS_KATEGORY" ManuallyRouted="false" />
+        <AssociationConnector Association="KepoITModel.FK_KOMENTAR_RELATIONS_USER" ManuallyRouted="false" />
+        <AssociationConnector Association="KepoITModel.FK_REPORT_RELATIONS_KOMENTAR" ManuallyRouted="false" />
+        <AssociationConnector Association="KepoITModel.FK_USER_RELATIONS_LEVEL_US" ManuallyRouted="false" />
+        <AssociationConnector Association="KepoITModel.FK_QUESTION_RELATIONS_USER" ManuallyRouted="false" />
+        <AssociationConnector Association="KepoITModel.FK_TAGS_QUESTION_QUESTION" ManuallyRouted="false" />
+        <AssociationConnector Association="KepoITModel.FK_USER_RELATIONS_STATUS" ManuallyRouted="false" />
+        <AssociationConnector Association="KepoITModel.FK_TAGS_QUESTION_TAGS" ManuallyRouted="false" />
+        <AssociationConnector Association="KepoITModel.FK_TAGS_SHARING_TAGS" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="KepoITModel.SHARING" Width="1.5" PointX="5.25" PointY="3.875" />
+        <AssociationConnector Association="KepoITModel.FK_KOMENTAR_RELATIONS_SHARING" />
+        <AssociationConnector Association="KepoITModel.FK_SHARING_RELATIONS_TAGS" />
+        <AssociationConnector Association="KepoITModel.FK_SHARING_RELATIONS_USER" />
+        <AssociationConnector Association="KepoITModel.FK_TAGS_SHARING_SHARING" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

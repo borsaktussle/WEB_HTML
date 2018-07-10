@@ -1,0 +1,89 @@
+﻿@model final.Models.SHARING
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>SHARING</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TITLE_SHARING)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TITLE_SHARING)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.POSTTING)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.POSTTING)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TGGL_SHARE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TGGL_SHARE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UPLOAD_FILE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UPLOAD_FILE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CLAP_SHARING)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CLAP_SHARING)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UPDATE_DATE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UPDATE_DATE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TAGS.TAGSNAME)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TAGS.TAGSNAME)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.USER.NAMA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.USER.NAMA)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

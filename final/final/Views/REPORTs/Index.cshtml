@@ -1,0 +1,46 @@
+﻿@model IEnumerable<final.Models.REPORT>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ANSWER.POST_KOMENT)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.KATEGORY_REPORT.NAMA_KATEGORY)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.KOMENTAR.POST_KOMEN)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ANSWER.POST_KOMENT)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.KATEGORY_REPORT.NAMA_KATEGORY)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.KOMENTAR.POST_KOMEN)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID_REPORT }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID_REPORT }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID_REPORT })
+        </td>
+    </tr>
+}
+
+</table>

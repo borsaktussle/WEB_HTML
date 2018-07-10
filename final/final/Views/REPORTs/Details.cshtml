@@ -1,0 +1,43 @@
+﻿@model final.Models.REPORT
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>REPORT</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ANSWER.POST_KOMENT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ANSWER.POST_KOMENT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.KATEGORY_REPORT.NAMA_KATEGORY)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.KATEGORY_REPORT.NAMA_KATEGORY)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.KOMENTAR.POST_KOMEN)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.KOMENTAR.POST_KOMEN)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID_REPORT }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

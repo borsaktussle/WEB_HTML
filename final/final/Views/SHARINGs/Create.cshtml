@@ -1,0 +1,82 @@
+﻿@model final.Models.SHARING
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Create</h2>
+
+
+@using (Html.BeginForm("Create", "SHARINGs", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+
+<div class="form-horizontal">
+    <h4>SHARING</h4>
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    @*<div class="form-group">
+        @Html.LabelFor(model => model.ID_USER, "ID_USER", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-2">
+            @Html.DropDownList("ID_USER", null, htmlAttributes: new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.ID_USER, "", new { @class = "text-danger" })
+        </div>
+    </div>*@
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.ID_TAGS, "ID_TAGS", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-2">
+            @Html.DropDownList("ID_TAGS", null, htmlAttributes: new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.ID_TAGS, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.TITLE_SHARING, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-8">
+            @Html.EditorFor(model => model.TITLE_SHARING, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.TITLE_SHARING, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.POSTTING, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-8">
+            @Html.EditorFor(model => model.POSTTING, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.POSTTING, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.UPLOAD_FILE, htmlAttributes: new { @class = "control-label col-md-2" })
+        @using (Html.BeginForm("Index", "SHARINGs", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        <input type="file" name="file" />
+    }
+    </div>
+    @*<div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Upload" class="btn btn-primary" />
+            </div>
+        </div>*@
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.CLAP_SHARING, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-2">
+            @Html.EditorFor(model => model.CLAP_SHARING, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.CLAP_SHARING, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Create" class="btn btn-default" />
+        </div>
+    </div>
+</div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

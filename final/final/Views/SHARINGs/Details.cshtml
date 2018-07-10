@@ -1,0 +1,87 @@
+﻿@model final.Models.SHARING
+
+@{
+    ViewBag.Title = "SHARING";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link rel="stylesheet" href="~/Content/jquery.paginate.css">
+<script src="~/Scripts/jquery.paginate.js"></script>
+<div>
+    <dl class="dl-horizontal">
+        <tr>
+            <td>
+                <h4><b><u>@Html.DisplayFor(model => model.TITLE_SHARING)</u></b></h4>
+            </td>
+            <td>
+                <div class="col-md-8">
+                    <i class="fa fa-hashtag"> @Html.DisplayFor(model => model.TAGS.TAGSNAME) </i>
+                </div>
+                <i class="fa fa-clock-o">@Html.DisplayFor(model => model.TGGL_SHARE)</i>
+            </td>
+            <br />
+            <td>
+                @Html.DisplayFor(model => model.POSTTING)
+            </td>
+            <br />
+            <td>
+                <div class="col-md-4">
+                    <i class="fa fa-trophy"> @Html.DisplayFor(model => model.CLAP_SHARING)</i>
+                </div>
+
+                <div class="col-md-3"><i class="fa fa-user"> @Html.DisplayFor(model => model.USER.NAMA) </i></div>
+            </td>
+            <td>
+                <div class="col-md-5">
+                    &emsp;&emsp;&emsp;&emsp;
+                    @Html.ActionLink("KOMENTAR", "../KOMENTARs/Create", new { id = Model.ID_SHARING })&emsp;&emsp;
+                    @Html.ActionLink("SUBSCIBE", "../SHARINGs", new { id = Model.ID_SHARING })
+                </div>
+            </td>
+            <hr />
+        </tr>
+    </dl>
+
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.ID_SHARING }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+
+
+    <td>
+        <br />
+        <br />
+        <h4><b><u>KOMENTAR<br /><br /></u></b></h4>
+</div>
+    </td>
+
+<ul class="row" id="example">
+    @foreach (var item in Model.KOMENTAR)
+    {
+    <li>
+        <tr>
+            <td>
+                @*<class ="col-md-5">*@
+                <i class="fa fa-user"></i>
+                @Html.DisplayFor(modelitem => item.USER.NAMA)
+                &emsp;&emsp;
+                <i class="fa fa-clock-o">@Html.DisplayFor(modelitem => item.TGL_KOMEN)</i><br /><br />
+                &emsp;&emsp;&emsp;&emsp;
+                @Html.DisplayFor(modelItem => item.POST_KOMEN) 
+                &emsp;&emsp;
+            <th>
+            <td>
+                @Html.ActionLink("Report", "../REPORTs/Create", new { id = Model.ID_SHARING })
+                &emsp;&emsp;&emsp;&emsp;
+                @Html.ActionLink("Edit", "Edit", new { id = Model.KOMENTAR })<br /><br />
+
+                </th>
+<td />
+            </td>
+        </tr>
+    </li>
+    }
+    </div>
+</ul>
+<script>
+    $('#example').paginate();
+</script>

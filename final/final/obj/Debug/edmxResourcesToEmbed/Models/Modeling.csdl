@@ -1,0 +1,453 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="KepoITModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="ANSWER">
+    <Key>
+      <PropertyRef Name="ID_ANSWER" />
+    </Key>
+    <Property Name="ID_ANSWER" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID_QUESTION" Type="Int32" />
+    <Property Name="ID_USER" Type="Int32" />
+    <Property Name="POST_KOMENT" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="TGGL_ANSWER" Type="DateTime" Precision="3" />
+    <Property Name="CLAP_ANSWER" Type="Int32" />
+    <Property Name="UPDATE_DATE" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="QUESTION" Relationship="Self.FK_ANSWER_RELATIONS_QUESTION" FromRole="ANSWER" ToRole="QUESTION" />
+    <NavigationProperty Name="USER" Relationship="Self.FK_ANSWER_RELATIONS_USER" FromRole="ANSWER" ToRole="USER" />
+    <NavigationProperty Name="KOMENTAR" Relationship="Self.FK_KOMENTAR_RELATIONS_ANSWER" FromRole="ANSWER" ToRole="KOMENTAR" />
+    <NavigationProperty Name="REPORT" Relationship="Self.FK_REPORT_RELATIONS_ANSWER" FromRole="ANSWER" ToRole="REPORT" />
+  </EntityType>
+  <EntityType Name="KATEGORY_REPORT">
+    <Key>
+      <PropertyRef Name="ID_KATEGORY" />
+    </Key>
+    <Property Name="ID_KATEGORY" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NAMA_KATEGORY" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="REPORT" Relationship="Self.FK_REPORT_RELATIONS_KATEGORY" FromRole="KATEGORY_REPORT" ToRole="REPORT" />
+  </EntityType>
+  <EntityType Name="KOMENTAR">
+    <Key>
+      <PropertyRef Name="ID_KOMEN" />
+    </Key>
+    <Property Name="ID_KOMEN" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID_SHARING" Type="Int32" />
+    <Property Name="ID_ANSWER" Type="Int32" />
+    <Property Name="ID_USER" Type="Int32" />
+    <Property Name="POST_KOMEN" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="TGL_KOMEN" Type="DateTime" Precision="3" />
+    <Property Name="CLAP_KOMENTAR" Type="Int32" />
+    <Property Name="UPDATE_DATE" Type="DateTime" Precision="3" />
+    <Property Name="IS_ACTIVE" Type="Boolean" />
+    <NavigationProperty Name="ANSWER" Relationship="Self.FK_KOMENTAR_RELATIONS_ANSWER" FromRole="KOMENTAR" ToRole="ANSWER" />
+    <NavigationProperty Name="USER" Relationship="Self.FK_KOMENTAR_RELATIONS_USER" FromRole="KOMENTAR" ToRole="USER" />
+    <NavigationProperty Name="REPORT" Relationship="Self.FK_REPORT_RELATIONS_KOMENTAR" FromRole="KOMENTAR" ToRole="REPORT" />
+    <NavigationProperty Name="SHARING" Relationship="KepoITModel.FK_KOMENTAR_RELATIONS_SHARING" FromRole="KOMENTAR" ToRole="SHARING" />
+  </EntityType>
+  <EntityType Name="LEVEL_USER">
+    <Key>
+      <PropertyRef Name="ID_LV" />
+    </Key>
+    <Property Name="ID_LV" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LVL_NAME" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="USER" Relationship="Self.FK_USER_RELATIONS_LEVEL_US" FromRole="LEVEL_USER" ToRole="USER" />
+  </EntityType>
+  <EntityType Name="QUESTION">
+    <Key>
+      <PropertyRef Name="ID_QUESTION" />
+    </Key>
+    <Property Name="ID_QUESTION" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID_USER" Type="Int32" />
+    <Property Name="TITLE_QUESTION" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="POSTING" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="TGGL_QUESTION" Type="DateTime" Precision="3" />
+    <Property Name="CLAP_QUESTION" Type="Int32" />
+    <Property Name="UDATE_DATE" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="ANSWER" Relationship="Self.FK_ANSWER_RELATIONS_QUESTION" FromRole="QUESTION" ToRole="ANSWER" />
+    <NavigationProperty Name="USER" Relationship="Self.FK_QUESTION_RELATIONS_USER" FromRole="QUESTION" ToRole="USER" />
+    <NavigationProperty Name="TAGS_QUESTION" Relationship="Self.FK_TAGS_QUESTION_QUESTION" FromRole="QUESTION" ToRole="TAGS_QUESTION" />
+  </EntityType>
+  <EntityType Name="REPORT">
+    <Key>
+      <PropertyRef Name="ID_REPORT" />
+    </Key>
+    <Property Name="ID_REPORT" Type="Int32" Nullable="false" />
+    <Property Name="ID_KOMEN" Type="Int32" />
+    <Property Name="ID_ANSWER" Type="Int32" />
+    <Property Name="ID_KATEGORY" Type="Int32" />
+    <NavigationProperty Name="ANSWER" Relationship="Self.FK_REPORT_RELATIONS_ANSWER" FromRole="REPORT" ToRole="ANSWER" />
+    <NavigationProperty Name="KATEGORY_REPORT" Relationship="Self.FK_REPORT_RELATIONS_KATEGORY" FromRole="REPORT" ToRole="KATEGORY_REPORT" />
+    <NavigationProperty Name="KOMENTAR" Relationship="Self.FK_REPORT_RELATIONS_KOMENTAR" FromRole="REPORT" ToRole="KOMENTAR" />
+  </EntityType>
+  <EntityType Name="STATUS">
+    <Key>
+      <PropertyRef Name="ID_STATUS" />
+    </Key>
+    <Property Name="ID_STATUS" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NAMA_STATUS" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="USER" Relationship="Self.FK_USER_RELATIONS_STATUS" FromRole="STATUS" ToRole="USER" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="TAGS">
+    <Key>
+      <PropertyRef Name="ID_TAGS" />
+    </Key>
+    <Property Name="ID_TAGS" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TAGSNAME" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="TAGS_QUESTION" Relationship="Self.FK_TAGS_QUESTION_TAGS" FromRole="TAGS" ToRole="TAGS_QUESTION" />
+    <NavigationProperty Name="TAGS_SHARING" Relationship="Self.FK_TAGS_SHARING_TAGS" FromRole="TAGS" ToRole="TAGS_SHARING" />
+    <NavigationProperty Name="SHARING" Relationship="KepoITModel.FK_SHARING_RELATIONS_TAGS" FromRole="TAGS" ToRole="SHARING" />
+  </EntityType>
+  <EntityType Name="TAGS_QUESTION">
+    <Key>
+      <PropertyRef Name="ID_TAGS_QUESTION" />
+    </Key>
+    <Property Name="ID_TAGS_QUESTION" Type="Int32" Nullable="false" />
+    <Property Name="ID_QUESTION" Type="Int32" />
+    <Property Name="ID_TAGS" Type="Int32" />
+    <NavigationProperty Name="QUESTION" Relationship="Self.FK_TAGS_QUESTION_QUESTION" FromRole="TAGS_QUESTION" ToRole="QUESTION" />
+    <NavigationProperty Name="TAGS" Relationship="Self.FK_TAGS_QUESTION_TAGS" FromRole="TAGS_QUESTION" ToRole="TAGS" />
+  </EntityType>
+  <EntityType Name="TAGS_SHARING">
+    <Key>
+      <PropertyRef Name="ID_TAGS_SHARING" />
+    </Key>
+    <Property Name="ID_TAGS_SHARING" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID_TAGS" Type="Int32" />
+    <Property Name="ID_SHARING" Type="Int32" />
+    <NavigationProperty Name="TAGS" Relationship="Self.FK_TAGS_SHARING_TAGS" FromRole="TAGS_SHARING" ToRole="TAGS" />
+    <NavigationProperty Name="SHARING" Relationship="KepoITModel.FK_TAGS_SHARING_SHARING" FromRole="TAGS_SHARING" ToRole="SHARING" />
+  </EntityType>
+  <EntityType Name="USER">
+    <Key>
+      <PropertyRef Name="ID_USER" />
+    </Key>
+    <Property Name="ID_USER" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="STA_ID_STATUS" Type="Int32" />
+    <Property Name="ID_LV" Type="Int32" />
+    <Property Name="NAMA" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="Alamat" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="FOTO_PROFILE" Type="Binary" MaxLength="1" FixedLength="true" />
+    <Property Name="RATING" Type="Int32" />
+    <Property Name="USERNAME" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="PASSWORD" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="ANSWER" Relationship="Self.FK_ANSWER_RELATIONS_USER" FromRole="USER" ToRole="ANSWER" />
+    <NavigationProperty Name="KOMENTAR" Relationship="Self.FK_KOMENTAR_RELATIONS_USER" FromRole="USER" ToRole="KOMENTAR" />
+    <NavigationProperty Name="LEVEL_USER" Relationship="Self.FK_USER_RELATIONS_LEVEL_US" FromRole="USER" ToRole="LEVEL_USER" />
+    <NavigationProperty Name="QUESTION" Relationship="Self.FK_QUESTION_RELATIONS_USER" FromRole="USER" ToRole="QUESTION" />
+    <NavigationProperty Name="STATUS" Relationship="Self.FK_USER_RELATIONS_STATUS" FromRole="USER" ToRole="STATUS" />
+    <NavigationProperty Name="SHARING" Relationship="KepoITModel.FK_SHARING_RELATIONS_USER" FromRole="USER" ToRole="SHARING" />
+  </EntityType>
+  <Association Name="FK_ANSWER_RELATIONS_QUESTION">
+    <End Role="QUESTION" Type="Self.QUESTION" Multiplicity="0..1" />
+    <End Role="ANSWER" Type="Self.ANSWER" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="QUESTION">
+        <PropertyRef Name="ID_QUESTION" />
+      </Principal>
+      <Dependent Role="ANSWER">
+        <PropertyRef Name="ID_QUESTION" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ANSWER_RELATIONS_USER">
+    <End Role="USER" Type="Self.USER" Multiplicity="0..1" />
+    <End Role="ANSWER" Type="Self.ANSWER" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="USER">
+        <PropertyRef Name="ID_USER" />
+      </Principal>
+      <Dependent Role="ANSWER">
+        <PropertyRef Name="ID_USER" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_KOMENTAR_RELATIONS_ANSWER">
+    <End Role="ANSWER" Type="Self.ANSWER" Multiplicity="0..1" />
+    <End Role="KOMENTAR" Type="Self.KOMENTAR" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ANSWER">
+        <PropertyRef Name="ID_ANSWER" />
+      </Principal>
+      <Dependent Role="KOMENTAR">
+        <PropertyRef Name="ID_ANSWER" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_REPORT_RELATIONS_ANSWER">
+    <End Role="ANSWER" Type="Self.ANSWER" Multiplicity="0..1" />
+    <End Role="REPORT" Type="Self.REPORT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ANSWER">
+        <PropertyRef Name="ID_ANSWER" />
+      </Principal>
+      <Dependent Role="REPORT">
+        <PropertyRef Name="ID_ANSWER" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_REPORT_RELATIONS_KATEGORY">
+    <End Role="KATEGORY_REPORT" Type="Self.KATEGORY_REPORT" Multiplicity="0..1" />
+    <End Role="REPORT" Type="Self.REPORT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KATEGORY_REPORT">
+        <PropertyRef Name="ID_KATEGORY" />
+      </Principal>
+      <Dependent Role="REPORT">
+        <PropertyRef Name="ID_KATEGORY" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_KOMENTAR_RELATIONS_USER">
+    <End Role="USER" Type="Self.USER" Multiplicity="0..1" />
+    <End Role="KOMENTAR" Type="Self.KOMENTAR" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="USER">
+        <PropertyRef Name="ID_USER" />
+      </Principal>
+      <Dependent Role="KOMENTAR">
+        <PropertyRef Name="ID_USER" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_REPORT_RELATIONS_KOMENTAR">
+    <End Role="KOMENTAR" Type="Self.KOMENTAR" Multiplicity="0..1" />
+    <End Role="REPORT" Type="Self.REPORT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KOMENTAR">
+        <PropertyRef Name="ID_KOMEN" />
+      </Principal>
+      <Dependent Role="REPORT">
+        <PropertyRef Name="ID_KOMEN" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_USER_RELATIONS_LEVEL_US">
+    <End Role="LEVEL_USER" Type="Self.LEVEL_USER" Multiplicity="0..1" />
+    <End Role="USER" Type="Self.USER" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LEVEL_USER">
+        <PropertyRef Name="ID_LV" />
+      </Principal>
+      <Dependent Role="USER">
+        <PropertyRef Name="ID_LV" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_QUESTION_RELATIONS_USER">
+    <End Role="USER" Type="Self.USER" Multiplicity="0..1" />
+    <End Role="QUESTION" Type="Self.QUESTION" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="USER">
+        <PropertyRef Name="ID_USER" />
+      </Principal>
+      <Dependent Role="QUESTION">
+        <PropertyRef Name="ID_USER" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TAGS_QUESTION_QUESTION">
+    <End Role="QUESTION" Type="Self.QUESTION" Multiplicity="0..1" />
+    <End Role="TAGS_QUESTION" Type="Self.TAGS_QUESTION" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="QUESTION">
+        <PropertyRef Name="ID_QUESTION" />
+      </Principal>
+      <Dependent Role="TAGS_QUESTION">
+        <PropertyRef Name="ID_QUESTION" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_USER_RELATIONS_STATUS">
+    <End Role="STATUS" Type="Self.STATUS" Multiplicity="0..1" />
+    <End Role="USER" Type="Self.USER" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="STATUS">
+        <PropertyRef Name="ID_STATUS" />
+      </Principal>
+      <Dependent Role="USER">
+        <PropertyRef Name="STA_ID_STATUS" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TAGS_QUESTION_TAGS">
+    <End Role="TAGS" Type="Self.TAGS" Multiplicity="0..1" />
+    <End Role="TAGS_QUESTION" Type="Self.TAGS_QUESTION" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TAGS">
+        <PropertyRef Name="ID_TAGS" />
+      </Principal>
+      <Dependent Role="TAGS_QUESTION">
+        <PropertyRef Name="ID_TAGS" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TAGS_SHARING_TAGS">
+    <End Role="TAGS" Type="Self.TAGS" Multiplicity="0..1" />
+    <End Role="TAGS_SHARING" Type="Self.TAGS_SHARING" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TAGS">
+        <PropertyRef Name="ID_TAGS" />
+      </Principal>
+      <Dependent Role="TAGS_SHARING">
+        <PropertyRef Name="ID_TAGS" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="KepoITEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="ANSWER" EntityType="Self.ANSWER" />
+    <EntitySet Name="KATEGORY_REPORT" EntityType="Self.KATEGORY_REPORT" />
+    <EntitySet Name="KOMENTAR" EntityType="Self.KOMENTAR" />
+    <EntitySet Name="LEVEL_USER" EntityType="Self.LEVEL_USER" />
+    <EntitySet Name="QUESTION" EntityType="Self.QUESTION" />
+    <EntitySet Name="REPORT" EntityType="Self.REPORT" />
+    <EntitySet Name="STATUS" EntityType="Self.STATUS" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <EntitySet Name="TAGS" EntityType="Self.TAGS" />
+    <EntitySet Name="TAGS_QUESTION" EntityType="Self.TAGS_QUESTION" />
+    <EntitySet Name="TAGS_SHARING" EntityType="Self.TAGS_SHARING" />
+    <EntitySet Name="USER" EntityType="Self.USER" />
+    <AssociationSet Name="FK_ANSWER_RELATIONS_QUESTION" Association="Self.FK_ANSWER_RELATIONS_QUESTION">
+      <End Role="QUESTION" EntitySet="QUESTION" />
+      <End Role="ANSWER" EntitySet="ANSWER" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ANSWER_RELATIONS_USER" Association="Self.FK_ANSWER_RELATIONS_USER">
+      <End Role="USER" EntitySet="USER" />
+      <End Role="ANSWER" EntitySet="ANSWER" />
+    </AssociationSet>
+    <AssociationSet Name="FK_KOMENTAR_RELATIONS_ANSWER" Association="Self.FK_KOMENTAR_RELATIONS_ANSWER">
+      <End Role="ANSWER" EntitySet="ANSWER" />
+      <End Role="KOMENTAR" EntitySet="KOMENTAR" />
+    </AssociationSet>
+    <AssociationSet Name="FK_REPORT_RELATIONS_ANSWER" Association="Self.FK_REPORT_RELATIONS_ANSWER">
+      <End Role="ANSWER" EntitySet="ANSWER" />
+      <End Role="REPORT" EntitySet="REPORT" />
+    </AssociationSet>
+    <AssociationSet Name="FK_REPORT_RELATIONS_KATEGORY" Association="Self.FK_REPORT_RELATIONS_KATEGORY">
+      <End Role="KATEGORY_REPORT" EntitySet="KATEGORY_REPORT" />
+      <End Role="REPORT" EntitySet="REPORT" />
+    </AssociationSet>
+    <AssociationSet Name="FK_KOMENTAR_RELATIONS_USER" Association="Self.FK_KOMENTAR_RELATIONS_USER">
+      <End Role="USER" EntitySet="USER" />
+      <End Role="KOMENTAR" EntitySet="KOMENTAR" />
+    </AssociationSet>
+    <AssociationSet Name="FK_REPORT_RELATIONS_KOMENTAR" Association="Self.FK_REPORT_RELATIONS_KOMENTAR">
+      <End Role="KOMENTAR" EntitySet="KOMENTAR" />
+      <End Role="REPORT" EntitySet="REPORT" />
+    </AssociationSet>
+    <AssociationSet Name="FK_USER_RELATIONS_LEVEL_US" Association="Self.FK_USER_RELATIONS_LEVEL_US">
+      <End Role="LEVEL_USER" EntitySet="LEVEL_USER" />
+      <End Role="USER" EntitySet="USER" />
+    </AssociationSet>
+    <AssociationSet Name="FK_QUESTION_RELATIONS_USER" Association="Self.FK_QUESTION_RELATIONS_USER">
+      <End Role="USER" EntitySet="USER" />
+      <End Role="QUESTION" EntitySet="QUESTION" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TAGS_QUESTION_QUESTION" Association="Self.FK_TAGS_QUESTION_QUESTION">
+      <End Role="QUESTION" EntitySet="QUESTION" />
+      <End Role="TAGS_QUESTION" EntitySet="TAGS_QUESTION" />
+    </AssociationSet>
+    <AssociationSet Name="FK_USER_RELATIONS_STATUS" Association="Self.FK_USER_RELATIONS_STATUS">
+      <End Role="STATUS" EntitySet="STATUS" />
+      <End Role="USER" EntitySet="USER" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TAGS_QUESTION_TAGS" Association="Self.FK_TAGS_QUESTION_TAGS">
+      <End Role="TAGS" EntitySet="TAGS" />
+      <End Role="TAGS_QUESTION" EntitySet="TAGS_QUESTION" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TAGS_SHARING_TAGS" Association="Self.FK_TAGS_SHARING_TAGS">
+      <End Role="TAGS" EntitySet="TAGS" />
+      <End Role="TAGS_SHARING" EntitySet="TAGS_SHARING" />
+    </AssociationSet>
+    <EntitySet Name="SHARING" EntityType="KepoITModel.SHARING" />
+    <AssociationSet Name="FK_KOMENTAR_RELATIONS_SHARING" Association="KepoITModel.FK_KOMENTAR_RELATIONS_SHARING">
+      <End Role="SHARING" EntitySet="SHARING" />
+      <End Role="KOMENTAR" EntitySet="KOMENTAR" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SHARING_RELATIONS_TAGS" Association="KepoITModel.FK_SHARING_RELATIONS_TAGS">
+      <End Role="TAGS" EntitySet="TAGS" />
+      <End Role="SHARING" EntitySet="SHARING" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SHARING_RELATIONS_USER" Association="KepoITModel.FK_SHARING_RELATIONS_USER">
+      <End Role="USER" EntitySet="USER" />
+      <End Role="SHARING" EntitySet="SHARING" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TAGS_SHARING_SHARING" Association="KepoITModel.FK_TAGS_SHARING_SHARING">
+      <End Role="SHARING" EntitySet="SHARING" />
+      <End Role="TAGS_SHARING" EntitySet="TAGS_SHARING" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="SHARING">
+    <Key>
+      <PropertyRef Name="ID_SHARING" />
+    </Key>
+    <Property Name="ID_SHARING" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID_USER" Type="Int32" />
+    <Property Name="ID_TAGS" Type="Int32" />
+    <Property Name="TITLE_SHARING" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="POSTTING" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="TGGL_SHARE" Type="DateTime" Precision="3" />
+    <Property Name="UPLOAD_FILE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CLAP_SHARING" Type="Int32" />
+    <Property Name="UPDATE_DATE" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="KOMENTAR" Relationship="KepoITModel.FK_KOMENTAR_RELATIONS_SHARING" FromRole="SHARING" ToRole="KOMENTAR" />
+    <NavigationProperty Name="TAGS" Relationship="KepoITModel.FK_SHARING_RELATIONS_TAGS" FromRole="SHARING" ToRole="TAGS" />
+    <NavigationProperty Name="USER" Relationship="KepoITModel.FK_SHARING_RELATIONS_USER" FromRole="SHARING" ToRole="USER" />
+    <NavigationProperty Name="TAGS_SHARING" Relationship="KepoITModel.FK_TAGS_SHARING_SHARING" FromRole="SHARING" ToRole="TAGS_SHARING" />
+  </EntityType>
+  <Association Name="FK_KOMENTAR_RELATIONS_SHARING">
+    <End Type="KepoITModel.SHARING" Role="SHARING" Multiplicity="0..1" />
+    <End Type="KepoITModel.KOMENTAR" Role="KOMENTAR" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SHARING">
+        <PropertyRef Name="ID_SHARING" />
+      </Principal>
+      <Dependent Role="KOMENTAR">
+        <PropertyRef Name="ID_SHARING" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SHARING_RELATIONS_TAGS">
+    <End Type="KepoITModel.TAGS" Role="TAGS" Multiplicity="0..1" />
+    <End Type="KepoITModel.SHARING" Role="SHARING" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TAGS">
+        <PropertyRef Name="ID_TAGS" />
+      </Principal>
+      <Dependent Role="SHARING">
+        <PropertyRef Name="ID_TAGS" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SHARING_RELATIONS_USER">
+    <End Type="KepoITModel.USER" Role="USER" Multiplicity="0..1" />
+    <End Type="KepoITModel.SHARING" Role="SHARING" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="USER">
+        <PropertyRef Name="ID_USER" />
+      </Principal>
+      <Dependent Role="SHARING">
+        <PropertyRef Name="ID_USER" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TAGS_SHARING_SHARING">
+    <End Type="KepoITModel.SHARING" Role="SHARING" Multiplicity="0..1" />
+    <End Type="KepoITModel.TAGS_SHARING" Role="TAGS_SHARING" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SHARING">
+        <PropertyRef Name="ID_SHARING" />
+      </Principal>
+      <Dependent Role="TAGS_SHARING">
+        <PropertyRef Name="ID_SHARING" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

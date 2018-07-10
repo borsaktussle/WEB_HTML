@@ -1,0 +1,83 @@
+﻿@model final.Models.KOMENTAR
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>KOMENTAR</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.POST_KOMEN)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.POST_KOMEN)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TGL_KOMEN)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TGL_KOMEN)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CLAP_KOMENTAR)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CLAP_KOMENTAR)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UPDATE_DATE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UPDATE_DATE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IS_ACTIVE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IS_ACTIVE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ANSWER.POST_KOMENT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ANSWER.POST_KOMENT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SHARING.TITLE_SHARING)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SHARING.TITLE_SHARING)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.USER.NAMA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.USER.NAMA)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID_KOMEN }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

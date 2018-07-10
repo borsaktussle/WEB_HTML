@@ -1,0 +1,51 @@
+﻿@model IEnumerable<final.Models.SHARING>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link rel="stylesheet" href="~/Content/jquery.paginate.css">
+<script src="~/Scripts/jquery.paginate.js"></script>
+
+<p>
+    <b><h4><i class="fa ui-icon-transfer-e-w"> @Html.ActionLink("Tulis Pengetahuanmu Disini", "Create")</h4></b></i>
+</p>
+<ul class="row" id="example">
+    @foreach (var item in Model)
+    {
+        <li>
+            <tr>
+                <td>
+                    <b><h2>@Html.ActionLink(item.TITLE_SHARING, "Details", new { id = item.ID_SHARING })</h2></b>
+
+                    @Html.DisplayFor(modelItem => item.POSTTING)
+                </td>
+                <br />
+                <td>
+                    <a href="~/Content/Upload_file/@Html.DisplayFor(modelItem => item.UPLOAD_FILE)">
+                    Download File : @Html.DisplayFor(modelItem => item.UPLOAD_FILE)</a>
+                </td>
+                <br />
+                <td>
+                    <div class="col-md-">
+                        <i class="fa fa-hashtag"> @Html.DisplayFor(modelItem => item.TAGS.TAGSNAME) </i>
+                    </div>
+                    <div class="col-md-4">
+                        <i class="fa fa-trophy"> @Html.DisplayFor(modelItem => item.CLAP_SHARING)</i>
+                    </div>
+                    <div class="col-md-8">
+                        <i class="fa fa-user"> @Html.DisplayFor(modelItem => item.TGGL_SHARE) </i>
+                    <div class="col-md-8">
+                        <i class="fa fa-clock-o">@Html.DisplayFor(modelItem => item.USER.NAMA)</i>
+                    </div>
+                        </div>
+                </td>
+                <hr />
+            </tr>
+            </li>
+            }
+    </ul>
+<script>
+    $('#example').paginate();
+</script>
+

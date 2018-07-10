@@ -1,0 +1,75 @@
+﻿@model IEnumerable<final.Models.KOMENTAR>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.POST_KOMEN)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TGL_KOMEN)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CLAP_KOMENTAR)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UPDATE_DATE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IS_ACTIVE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ANSWER.POST_KOMENT)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SHARING.TITLE_SHARING)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.USER.NAMA)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.POST_KOMEN)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TGL_KOMEN)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CLAP_KOMENTAR)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UPDATE_DATE)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IS_ACTIVE)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ANSWER.POST_KOMENT)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SHARING.TITLE_SHARING)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.USER.NAMA)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.ID_KOMEN }) |
+                @Html.ActionLink("Details", "Details", new { id = item.ID_KOMEN }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.ID_KOMEN })
+            </td>
+        </tr>
+    }
+
+</table>

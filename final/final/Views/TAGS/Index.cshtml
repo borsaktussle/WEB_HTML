@@ -1,0 +1,18 @@
+﻿@model IEnumerable<final.Models.TAGS>
+
+@{
+    ViewBag.Title = "TAGS";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@foreach (var item in Model)
+{
+    <tr>
+        <td>
+            <i class="fa fa-hashtag">
+                <b>@Html.ActionLink(@item.TAGSNAME, "Details", new { id = item.ID_TAGS })</b>
+            </i><br /><br />
+        </td>
+    </tr>
+}
+
+</table>
